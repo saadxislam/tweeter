@@ -23,7 +23,10 @@ body {
 
 .container{
   display: flex;
-  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  /* align-items: center; */
+  justify-content: center;
   background-color: #f4f1ec ;
 }
 
