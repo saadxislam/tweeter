@@ -18,6 +18,17 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', 'sans-serif';
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  background-color: #f4f1ec ;
+}
+
+nav span{
+  font-family: Bungee;
 }
 
 /*
