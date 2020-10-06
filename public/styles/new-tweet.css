@@ -29,6 +29,9 @@ form > label{
   font-weight: 700;
 }
 
+.redColor {
+  color: red;
+}
 
 button{
   background-color: #4056A1;
