@@ -37,7 +37,7 @@
       </div>
       <br>
       <div id="headerName">
-        <h2>Jill Dorsey</h2>
+        <h2>Saad</h2>
       </div>
     </header>
     
@@ -45,14 +45,13 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets" id="form">
           <label for="tweet-text">What are you humming about?</label>
           
 
           <textarea name="text" id="tweet-text"></textarea>
-
           <div>
-            <button type="submit">Tweet</button>
+            <button id="btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
