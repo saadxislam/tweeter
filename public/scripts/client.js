@@ -69,6 +69,7 @@ const createTweetElement = (tweet) => {
 const renderTweets = function(data) {
   data.forEach(tweet => {
     $("#tweet-section").prepend(createTweetElement(tweet));
+    $('.counter').html(140);
   })
 }
 
@@ -86,9 +87,8 @@ $(document).ready(function () {
     const newTweet = ($("#tweet-text").val()); //jquery gets me the value of tweettext
 
     if (newTweet.length > 140 || newTweet.length === 0) {
-      // alert('Exceeded or failed to meet character count');
       $(".error").slideDown();
-      $(".error").css('visibility', 'visible');
+      $('.error').css({"visibility": "visible" });
     } else {
       $.ajax({
         method: "POST",
