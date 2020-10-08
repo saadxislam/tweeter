@@ -78,13 +78,17 @@ $(document).ready(function () {
  
   const $button = $('#btn');
   $button.on('click', function (event) {
+    $(".error").slideUp();
+  
     event.preventDefault();
 
     const $textContent = $("#form");
     const newTweet = ($("#tweet-text").val()); //jquery gets me the value of tweettext
 
     if (newTweet.length > 140 || newTweet.length === 0) {
-      alert('Exceeded or failed to meet character count');
+      // alert('Exceeded or failed to meet character count');
+      $(".error").slideDown();
+      $(".error").css('visibility', 'visible');
     } else {
       $.ajax({
         method: "POST",
@@ -98,7 +102,7 @@ $(document).ready(function () {
         console.log('res :', res);
           renderTweets([res[res.length-1]])
 
-        });
+        })
       })
     }
   });
