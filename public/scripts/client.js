@@ -61,13 +61,13 @@ const createTweetElement = (tweet) => {
 }
 
 const renderTweets = function(data) {
-  // loops through tweets
-  let $tweet = '';
+
   data.forEach(tweet => {
-    console.log(tweet);
-    $tweet += createTweetElement(tweet);
+
+    $("#tweet-section").prepend(createTweetElement(tweet));
+
   })
-   $('.article').append($tweet);
+   
 }
 
 $(document).ready(function () {
@@ -86,23 +86,32 @@ $(document).ready(function () {
         method: "POST",
         url: "/tweets/",
         data: $textContent.serialize(),
+    
       }).then((res) => {
-          alert( "Data Saved" );
+        document.getElementById("form").reset();
+        $.ajax("/tweets/", { method: 'GET' })
+        .then(function (res, err) {
+        console.log('res :', res);
+          renderTweets([res[res.length-1]])
+
+        });
+        
+        
         
       })
     }
   
 
-    const loadTweets = () => {
-      $.ajax('/tweets', { method: 'GET' })
-        .then(function (res, err) {
-          renderTweets(res)
-        });
-      }
-      loadTweets();
-  
-
+    
+    
   });
+      const loadTweets = () => {
+        $.ajax('/tweets', { method: 'GET' })
+          .then(function (res, err) {
+            renderTweets(res)
+          });
+        }
+        loadTweets();
 
 });
 
