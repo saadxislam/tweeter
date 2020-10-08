@@ -77,17 +77,21 @@ $(document).ready(function () {
   $button.on('click', function (event) {
     event.preventDefault();
     console.log('Button clicked, performing ajax call...');
-    const $textContent = $("#form")
-    console.log('textContent :', $textContent);
-    console.log($textContent.serialize())
-    $.ajax({
-      method: "POST",
-      url: "/tweets/",
-      data: $textContent.serialize(),
-    }).then(function() {
-        alert( "Data Saved" );
-      
-    });
+    const $textContent = $("#form");
+    const newTweet = ($("#tweet-text").val()); //jquery gets me the value of tweettext
+    if (newTweet.length > 140 || newTweet.length === 0) {
+      alert('Exceeded or failed to meet character count');
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "/tweets/",
+        data: $textContent.serialize(),
+      }).then((res) => {
+          alert( "Data Saved" );
+        
+      })
+    }
+  
 
     const loadTweets = () => {
       $.ajax('/tweets', { method: 'GET' })

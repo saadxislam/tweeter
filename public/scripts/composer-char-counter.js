@@ -13,3 +13,7 @@ $(document).ready(function() {
     }
   });
 });
+
+// const newTweet = ($("#tweet-text").val()); //jquery gets me the value of tweettext
+// if (newTweet.length > 140 || newTweet.length === 0) {
+//   alert('please enter a valid tweet');
