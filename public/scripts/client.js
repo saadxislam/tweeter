@@ -30,6 +30,12 @@
 // ]
 
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 
 const createTweetElement = (tweet) => {
   const $tweet = `<article class="article">
@@ -42,7 +48,7 @@ const createTweetElement = (tweet) => {
    
     <header class="tweet-header-2">${tweet.user.handle}</header>
   </div>
-  <p class="tweet-body">${tweet.content.text}</p>
+  <p class="tweet-body">${escape(tweet.content.text)}</p>
   <div class="line"></div>
   <div class="tweet-footer-container">
     <footer class="tweet-footer-container">${tweet.created_at}</footer>
@@ -61,24 +67,22 @@ const createTweetElement = (tweet) => {
 }
 
 const renderTweets = function(data) {
-
   data.forEach(tweet => {
-
     $("#tweet-section").prepend(createTweetElement(tweet));
-
   })
-   
 }
 
-$(document).ready(function () {
-  // renderTweets(data);
+   
 
+$(document).ready(function () {
+ 
   const $button = $('#btn');
   $button.on('click', function (event) {
     event.preventDefault();
-    console.log('Button clicked, performing ajax call...');
+
     const $textContent = $("#form");
     const newTweet = ($("#tweet-text").val()); //jquery gets me the value of tweettext
+
     if (newTweet.length > 140 || newTweet.length === 0) {
       alert('Exceeded or failed to meet character count');
     } else {
@@ -95,16 +99,16 @@ $(document).ready(function () {
           renderTweets([res[res.length-1]])
 
         });
-        
-        
-        
       })
     }
+  });
+        
+        
+        
   
 
     
     
-  });
       const loadTweets = () => {
         $.ajax('/tweets', { method: 'GET' })
           .then(function (res, err) {
