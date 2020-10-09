@@ -24,16 +24,17 @@ body {
   font-family: 'Source Sans Pro', 'sans-serif';
 }
 
+#tweet-section > article:nth-child(1) > p{
+  overflow: auto;
+}
+
 .container{
-  
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 90%;
   justify-content: center;
   background-color: #f4f1ec;
-  
-  
 }
 
 #tweet-section{
@@ -44,7 +45,6 @@ body {
   flex-direction: column;
   justify-content: center; 
   align-items: center;
-  /* border: 5px solid black; */
   background-color: #f4f1ec ;
 }
 
@@ -95,7 +95,6 @@ body {
 }
 
 .article:hover .tweet-header-2{
-  /* box-shadow: 10px 10px gray; */
   opacity: 1;
 }
 
@@ -103,13 +102,11 @@ body {
   padding-left: 1em;
 }
 
-
 .tweet-footer-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 10px;
-  
 }
 
 .tweet-icon-container{
@@ -125,7 +122,6 @@ body {
   justify-content: flex-start;
   font-size: small;
   margin-right: -5%;
-
 }
 
 .bottom-image{
@@ -139,11 +135,6 @@ body {
   padding: 0%;
 }
 
-
-
-
-
-
 #top-left{
   display: flex;
   justify-content: space-between;
@@ -152,7 +143,6 @@ body {
 
 }
 
-
 nav span{
   font-family: Bungee;
 }
@@ -160,9 +150,9 @@ nav span{
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-/* Tablet Styles */
+/* Tablet and Desktop Style */
 @media only screen and (min-width: 769px) {
-  .test {
+  .container-header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -171,8 +161,7 @@ nav span{
 
   #original-header{
     margin: 150px 25px 0px 25px;
-    width: 45%;
-    
+    width: 45%;  
   }
 
   .container{

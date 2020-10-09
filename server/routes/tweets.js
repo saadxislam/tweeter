@@ -1,13 +1,12 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper    = require("../lib/util/user-helper");
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
-    // console.log("tweets route here")
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -18,7 +17,6 @@ module.exports = function(DataHelpers) {
   });
   
   tweetsRoutes.post("/", function(req, res) {
-    // console.log(req.body);
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
@@ -44,4 +42,4 @@ module.exports = function(DataHelpers) {
 
   return tweetsRoutes;
 
-}
+};

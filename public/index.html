@@ -32,7 +32,7 @@
       <span>tweeter</span>
       <div><b>Write</b> a new tweet</div>
     </nav>
-    <div class="test">
+    <div class="container-header">
       <header id="original-header">
         <div id="headerImage">
           <img src="/images/profile-hex.png">
@@ -47,13 +47,9 @@
       <main class="container">
         <section class="new-tweet">
           <p class="error">Welcome to ErrorVille: We Love Too Many Characters, Or None! Say something or Say Less to proceed!</p>
-          <h2>Compose Tweet</h2>
-         
-          <form method="POST" action="/tweets" id="form">
-  
-            <label for="tweet-text">What are you humming about?</label>
-            
-  
+          <h2>Compose Tweet</h2>         
+          <form method="POST" action="/tweets" id="form">  
+            <label for="tweet-text">What are you humming about?</label>              
             <textarea name="text" id="tweet-text"></textarea>
             <div>
               <button id="btn" type="submit">Tweet</button>
@@ -63,8 +59,7 @@
         </section>
         <section id="tweet-section"> 
       </section>
-          </main>
-    </div>
-   
+        </main>
+    </div>   
   </body>
 </html>
