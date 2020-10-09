@@ -32,8 +32,8 @@ const createTweetElement = (tweet) => {
   <div class="tweet-footer-container">
     <footer class="tweet-footer-container">${time}</footer>
     <div class="tweet-icon-container">
-      <img class="bottom-image">&#9787
-      <img class="bottom-image">&#9835
+      <img class="bottom-image">&#x1f501
+      <img class="bottom-image">&#x1f308
       <img class="bottom-image">&#9829
 
     </div>
